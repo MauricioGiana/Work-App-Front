@@ -22,7 +22,7 @@ export default function EditUbicacion({profile, id}){
     React.useEffect(()=>{setPerfil(profile)},[profile]); 
  
     Geocode.setLanguage("es");
-    Geocode.setApiKey("AIzaSyAf33rszL-PaMcLx9peQiwUgdDFwJiBxLc");
+    Geocode.setApiKey("AIzaSyA2fddOp6p6yICiKtAOSGZJ48Kj5TYWn4U");
 
     React.useEffect(()=>{
         var a = 1; 
