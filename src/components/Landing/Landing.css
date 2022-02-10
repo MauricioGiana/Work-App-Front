@@ -30,26 +30,46 @@
   right: 5vw;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
   .main_landing_container {
-    grid-template-columns: [x0] 20% [x1] 60% [x2] 20% [x3];
-    grid-template-rows: [y0] 35% [y1] 60% [y2] 5% [y3];
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .about_landing {
-    grid-column: x1/ x2;
-    grid-row: y0 / y1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
   }
-  .about_landing h1 {
-    font-size: 20px;
+  .about_landing > h1 {
+    font-size: 30px;
     font-weight: 800;
     color: #d42232;
+    text-align: center;
+  }
+  .about_landing > p {
+    font-size: 15px;
     text-align: center;
   }
   .login_landing {
     grid-column: x1 / x2;
     grid-row: y1 / y2;
     background-color: white;
-    width: 250px;
+    width: 320px;
     border-radius: 20px;
+    margin-top: 3vh;
+    position: initial;
+  }
+}
+
+@media (max-width: 400px) {
+  .about_landing {
+    width: 85vw;
+  }
+  .login_landing {
+    width: 85vw;
   }
 }

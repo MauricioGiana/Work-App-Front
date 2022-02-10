@@ -9,7 +9,6 @@ export default function Landing() {
 
   return (
     <div className="main_landing_container">
-      <div className="container"></div>
       <div className="about_landing">
         <h1>WorkApp</h1>
         <p>
