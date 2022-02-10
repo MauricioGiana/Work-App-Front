@@ -18,7 +18,7 @@ export default function Filtros() {
     oficio: null,
   })
 
-  const [unable, setUnable] = React.useState(false)
+  const [enable, setEnable] = React.useState(false)
 
 
 
@@ -34,7 +34,7 @@ export default function Filtros() {
 
   React.useEffect(() => {
     async function setear() {
-      if (unable && usuario.usr_location !== null) {
+      if (enable && usuario.usr_location !== null) {
         const ordenado = await OrdenadorDistancia(Filtrado(storePosts, filtro), usuario, filtro.maximo);
         // console.log("ordenado", ordenado)
         dispatch(setFilters(ordenado.map(elemento => { return elemento.post })))
@@ -43,7 +43,7 @@ export default function Filtros() {
     }
     setear();
     // console.log("filtro aplicado", filtro); 
-  }, [dispatch, filtro, storePosts, unable, usuario])
+  }, [dispatch, filtro, storePosts, enable, usuario])
 
 
   //select oficio
@@ -58,7 +58,7 @@ export default function Filtros() {
   const { job, id } = formValues;
 
   const handleUnable = (e) => {
-    setUnable(!unable);
+    setEnable(!enable);
   }
 
   const handleInputChange = ({ target }) => {
@@ -126,9 +126,9 @@ export default function Filtros() {
       </div>
       <div className='div-dist'>
         <label className='distan'>
-          <input className='checkbox' onChange={handleUnable} type="checkbox" />Distancia<span className={unable ? "distunabled" : "distdisabled"}>{filtro.maximo} km</span> 
+          <input className='checkbox' onChange={handleUnable} type="checkbox" />Distancia<span className={enable ? "distunabled" : "distdisabled"}>{filtro.maximo} km</span> 
         </label>
-        <input className='rangedist' type='range' min='2' max='100' value={filtro.maximo} onChange={event => setFiltro({ ...filtro, maximo: event.target.value })} disabled={!unable} />
+        <input className='rangedist' type='range' min='2' max='100' value={filtro.maximo} onChange={event => setFiltro({ ...filtro, maximo: event.target.value })} disabled={!enable} />
       </div>
     </div>
   )
