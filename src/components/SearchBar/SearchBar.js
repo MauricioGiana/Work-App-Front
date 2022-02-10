@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./SearchBar.css";
+import styles from "./SearchBar.module.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 // SearchBar Actions
@@ -40,28 +40,27 @@ export const SearchBar = () => {
   };
 
   return (
-    <div className="search">
-
-      <div className="searchInputs">
+    <div className={styles.search}>
+      <div className={styles.searchInputs}>
         <input
           type="text"
           placeholder="Buscar..."
           value={wordEntered}
           onChange={handleFilter}
         />
-        <div className="searchIcon">
+        <div className={styles.searchIcon}>
           {filteredData.length === 0 ? (
-            <SearchIcon />
+            <SearchIcon style={{width: "100%", height: "100%"}} />
           ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput} />
+            <CloseIcon style={{width: "100%", height: "100%", cursor: "pointer"}} onClick={clearInput} />
           )}
         </div>
       </div>
       {filteredData.length !== 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
+        <div className={styles.dataResult}>
+          {filteredData.slice(0, 10).map((value, key) => {
             return (
-              <a key={value.job_id} href={`/job/${value.job_id}`} className="dataItem" rel="noreferrer">
+              <a key={value.job_id} href={`/job/${value.job_id}`} className={styles.dataItem} rel="noreferrer">
                 <p>{value.job_name} </p>
               </a>
             );

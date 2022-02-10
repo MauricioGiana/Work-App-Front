@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ChatWindowv2 = ({ receiverData, unreadMessages }) => {
+const ChatWindowv2 = ({ receiverData, unreadMessages, iconColor }) => {
     const myId = useSelector(state => state.auth.uid);
     const classes = useStyles();
     const [open, setOpen] = useState(false);
@@ -64,7 +64,7 @@ const ChatWindowv2 = ({ receiverData, unreadMessages }) => {
         socket.on("response", (data) => {
             socket.emit("data", myId);
         });
-    }, [myId]);
+    }, [myId, iconColor]);
 
     useEffect(() => {
         const newData = data?.map(chat => {
@@ -133,7 +133,7 @@ const ChatWindowv2 = ({ receiverData, unreadMessages }) => {
                     </Tooltip>
                 ) : (
                     <Tooltip title="messenger" aria-label="chat" onClick={() => setOpen(true)}>
-                        <MessageIcon />
+                        <MessageIcon style={{color: iconColor ? iconColor : "#adb5bd"}} />
                     </Tooltip>
                 )
             }

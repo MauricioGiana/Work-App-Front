@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     left: "0",
     zIndex: 3,
     height: "100vh",
-    width: "12vw",
+    width: "12em",
     color: "white",
     paddingTop: theme.spacing(10),
     backgroundColor: theme.palette.primary.main,
@@ -52,15 +52,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     marginLeft: "29px",
     marginTop: "-23px",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
   text: {
     fontWeight: 500,
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
   link: {
     width: "100%",
@@ -68,8 +62,8 @@ const useStyles = makeStyles((theme) => ({
   },
   showleft: {
     cursor: "pointer",
-    width: "2vw",
-    height: "2vw",
+    width: "100%",
+    height: "100%",
     "&:hover": {
       color: "#555",
     },
