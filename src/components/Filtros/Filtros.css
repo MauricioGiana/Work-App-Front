@@ -1,10 +1,10 @@
 .filtros_main{
-    width: 108%;
     background-color: #3f51b5;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 5vw;
+    height: 10vh;
+    width: 70vw;
     border-bottom-left-radius: 1.5vw;
     border-bottom-right-radius: 1.5vw;
     box-shadow: 0px 0px 5px #000000;
@@ -22,12 +22,30 @@
     font-size: 16px;
 }
 
+.div-dist {
+    display: flex;
+    flex-direction: column;
+}
+
 .distan{
     color: white;
-    margin-right: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1vw;
+    width: 20vw;
+}
+
+.distan > span {
+    position: relative;
+    left: 9vw;
+}
+
+.distdisabled {
+    color: rgb(143, 134, 134);
+}
+
+.rangedist {
+    width: 20vw;
 }
 
 .options{
@@ -47,4 +65,10 @@
 
 .div-oficio input {
     height: 20px;
+}
+
+.checkbox {
+    margin-right: 10px;
+    height: 1vw;
+    width: 1vw;
 }
