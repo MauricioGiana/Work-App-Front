@@ -26,14 +26,14 @@ import { Workerpost } from "../Workerpost/Workerpost";
 import ChatWindowv2 from "../ChatWindow/ChatWindowv2";
 import Leftbar from "../NewNav/Leftbar/Leftbar";
 import {
-  makeStyles,
   Container,
   Fab,
   Modal,
   Tooltip,
   Button,
-} from "@material-ui/core";
-import BuildIcon from '@material-ui/icons/Build';
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import BuildIcon from '@mui/icons-material/Build';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({

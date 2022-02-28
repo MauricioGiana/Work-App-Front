@@ -5,9 +5,9 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  makeStyles,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { useState, useEffect } from "react";
 import { getProfile } from "../../../controllers";
 import { useNavigate } from 'react-router-dom';

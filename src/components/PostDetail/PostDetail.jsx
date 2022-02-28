@@ -4,9 +4,9 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  makeStyles,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getPostDetail, getProfile } from "../../controllers";

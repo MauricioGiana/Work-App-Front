@@ -2,11 +2,11 @@ import {
     Button,
     Container,
     Fab,
-    makeStyles,
     Modal,
     Tooltip,
-} from "@material-ui/core";
-import MessageIcon from '@material-ui/icons/Message';
+} from "@mui/material";
+import MessageIcon from '@mui/icons-material/Message';
+import { makeStyles } from "@mui/styles";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Mensajes from '../Messenger/Mensajes/Mensajes';
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ChatWindowv2 = ({ receiverData, unreadMessages, iconColor }) => {
+const ChatWindowv2 = ({ show, handleShowChat, receiverData, unreadMessages, iconColor }) => {
     const myId = useSelector(state => state.auth.uid);
     const classes = useStyles();
     const [open, setOpen] = useState(false);
@@ -131,19 +131,15 @@ const ChatWindowv2 = ({ receiverData, unreadMessages, iconColor }) => {
                             <span>Abrir Chat</span>
                         </button>
                     </Tooltip>
-                ) : (
-                    <Tooltip title="messenger" aria-label="chat" onClick={() => setOpen(true)}>
-                        <MessageIcon style={{color: iconColor ? iconColor : "#adb5bd"}} />
-                    </Tooltip>
-                )
+                ) : null
             }
-            <Modal open={open}>
+            <Modal open={open || show}>
                 <Container className={classes.container}>
                     <div className='chatMenu'>
                         <div className='chatMenuWrapper'>
                             <div className="chat-header">
                                 <input onChange={handleSearch} placeholder='Search for Contacts' className='chatMenuInput' />
-                                <button onClick={() => setOpen(false)}>
+                                <button onClick={handleShowChat}>
                                     X
                                 </button>
                             </div>

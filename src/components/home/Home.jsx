@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../actions/auth";
 import Cards from "../Cards/Cards";
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  root: {
+    display: "flex",
+  }
 }));
 
 
@@ -51,7 +55,7 @@ export default function Home() {
 
 
   return (loader ? <LoadingScreen /> :
-    <div className={styles.homecontainer}>
+    <div className={classes.root}>
         <div>
           {
             type === "posts" && (

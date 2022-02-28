@@ -2,11 +2,11 @@ import {
     Button,
     Container,
     Fab,
-    makeStyles,
     Modal,
     Tooltip,
-} from "@material-ui/core";
-import MessageIcon from '@material-ui/icons/Message';
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import MessageIcon from '@mui/icons-material/Message';
 import React, { useState, useEffect, useRef } from "react";
 import Mensajes from '../Messenger/Mensajes/Mensajes';
 import Chat from "../Messenger/Chat/Chat";

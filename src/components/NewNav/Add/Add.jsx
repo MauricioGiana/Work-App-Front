@@ -4,7 +4,6 @@ import {
   Fab,
   FormControlLabel,
   FormLabel,
-  makeStyles,
   MenuItem,
   Modal,
   Radio,
@@ -13,10 +12,11 @@ import {
   TextField,
   Tooltip,
   IconButton,
-} from "@material-ui/core";
-import { Add as AddIcon, NoEncryption } from "@material-ui/icons";
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import { Add as AddIcon, NoEncryption } from "@mui/icons-material";
 import { useState } from "react";
-import MuiAlert from "@material-ui/lab/Alert";
+import Alert from "@mui/material/Alert";
 import { postPost, getPosts } from '../../../actions/formEmpleador';
 import { sendEmail } from "../../../controllers";
 import { startUploading } from "../../../helpers/imageUpload";
@@ -124,8 +124,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+function throwAlert(props) {
+  return <Alert elevation={6} variant="filled" {...props} />;
 }
 
 const Add = () => {
@@ -178,10 +178,10 @@ const Add = () => {
 
       await dispatch(getPosts())
 
-      alert("Post created succesufully")
+      throwAlert("Post created succesufully")
 
     } catch (e) {
-      alert(e);
+      throwAlert(e);
     }
   }
 

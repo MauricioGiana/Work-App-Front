@@ -1,4 +1,5 @@
-import { Container, makeStyles } from "@material-ui/core";
+import { Container } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import Post from "../Post/Post";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

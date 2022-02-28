@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getJobs } from "../../controllers";
 import JobCard from "../JobCard/JobCard";
 import axios from "axios";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     jobscontainer: {

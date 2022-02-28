@@ -1,10 +1,10 @@
 import {
     Link,
     Container,
-    makeStyles,
     Typography,
     Divider,
-  } from "@material-ui/core";
+  } from "@mui/material";
+  import { makeStyles} from "@mui/styles";
   // Url
   import { FRONT_URL, JOB_URL } from "../../../enviroment";
   import axios from 'axios';

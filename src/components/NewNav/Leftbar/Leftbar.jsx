@@ -1,4 +1,4 @@
-import { Container, makeStyles, Typography, Theme } from "@material-ui/core";
+import { Container, Typography, Theme } from "@mui/material";
 import { Link } from "react-router-dom";
 import {
   ExitToApp,
@@ -7,17 +7,18 @@ import {
   Person,
   Face,
   ArrowUpward
-} from "@material-ui/icons";
+} from "@mui/icons-material";
+import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../../actions/auth";
 // Estilos
-import navStyles from '../Styles/newNav.module.css';
+
 import { useEffect } from "react";
 import { ImList } from "react-icons/im";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
+  /* container: {
     position: "fixed",
     top: "65px",
     left: "0",
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "#555",
     },
-  },
+  }, */
 }));
 
 const Leftbar = () => {
@@ -92,42 +93,42 @@ const Leftbar = () => {
         <ImList />
       </div>
       <Container style={{ padding: '0', paddingTop: '1vw', backgroundColor: '#fff', display: open ? "block" : "none" }} className={classes.container}>
-        <div className={navStyles.item} onClick={handleOpen}>
+        <div onClick={handleOpen}>
           <Link to="/home" style={{textDecoration: "none"}}  className={classes.link}>
               <Home className={classes.icon} />
               <Typography className={classes.text}><p className={classes.parr}>Home</p>
               </Typography>
           </Link>
         </div>
-        <div className={navStyles.item} onClick={handleOpen}>
+        <div  onClick={handleOpen}>
           <Link style={{textDecoration: "none"}} className={classes.link} to="/jobs">
             <Work className={classes.icon} />
             <Typography className={classes.text}><p className={classes.parr}>Buscar Trabajador</p>
             </Typography>
           </Link>
         </div>
-        <div className={navStyles.item} onClick={handleOpen}>
+        <div onClick={handleOpen}>
           <Link style={{textDecoration: "none"}} className={classes.link} to={`/profile/${uid}`}>
             <Person className={classes.icon} />
             <Typography className={classes.text}><p className={classes.parr}>Perfil</p>
             </Typography>
           </Link>
         </div>
-        <div className={navStyles.item} onClick={handleOpen}>
+        <div onClick={handleOpen}>
           <Link style={{textDecoration: "none"}} className={classes.link} to="/about">
             <Face className={classes.icon} />
             <Typography className={classes.text}><p className={classes.parr}>Nosotros</p>
             </Typography>
           </Link>
         </div>
-        <div className={navStyles.item} onClick={handleOpen}>
+        <div onClick={handleOpen}>
           <Link style={{textDecoration: "none"}} className={classes.link} to={`/upgradePlan`}>
             <ArrowUpward className={classes.icon} />
             <Typography className={classes.text}><p className={classes.parr}>Mejorar Plan</p>
             </Typography>
           </Link>
         </div>
-        <div className={navStyles.item}>
+        <div>
           <ExitToApp className={classes.icon} />
           <Typography className={classes.text} onClick={handleLogout}>Cerrar sesión</Typography>
         </div>
