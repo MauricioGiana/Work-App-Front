@@ -23,6 +23,7 @@ import { getJobs } from '../../actions/formJobs';
 import socket from '../socket';
 import ChatWindowv2 from '../ChatWindow/ChatWindowv2';
 import { startLogout } from "../../actions/auth";
+import SearchBar2 from '../SearchBar/SearchBar2';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -258,7 +259,6 @@ const NewNav = () => {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <IconButton size="large" aria-label="show messages" color="inherit" onClick={handleShowChat}>
               <Badge badgeContent={mess.badgeContent} color="error">
@@ -276,7 +276,7 @@ const NewNav = () => {
               </Badge>
             </IconButton>
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{ marginLeft: "1rem" }}>
-              <Avatar alt="avatar" src="/static/images/avatar/2.jpg" />
+              <Avatar alt={profile?.usr_username} src={profile?.usr_photo} />
             </IconButton>
             <Menu
               sx={{ mt: '45px' }}

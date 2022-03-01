@@ -7,7 +7,7 @@ import axios from "axios";
 // urls
 import { JOB_URL} from '../../enviroment';
 
-export const SearchBar = () => {
+const SearchBar = () => {
   
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
@@ -70,3 +70,5 @@ export const SearchBar = () => {
     </div>
   );
 };
+
+export default SearchBar;

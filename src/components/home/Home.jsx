@@ -59,7 +59,10 @@ export default function Home() {
         <div>
           {
             type === "posts" && (
+              <>
               <Feed />
+              <Add />
+              </>
             )
           }
           {
@@ -72,7 +75,6 @@ export default function Home() {
         </div>
         <Grid item sm={3} className={classes.right}>
         </Grid>
-      <Add />
     </div>
   );
 };
